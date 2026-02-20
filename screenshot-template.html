@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Swiss - App Store Screenshot Template</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: #f5f5f5; 
+            padding: 40px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #1a1a2e; margin-bottom: 10px; }
+        .info { background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 30px; }
+        .info h3 { color: #1a1a2e; margin-bottom: 15px; }
+        .info ul { margin-left: 20px; }
+        .info li { margin-bottom: 8px; color: #666; }
+        
+        .screenshot-row { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .screenshot {
+            background: #fff;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .phone-frame {
+            width: 280px;
+            height: 580px;
+            background: #1a1a2e;
+            border-radius: 40px;
+            padding: 12px;
+            position: relative;
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Screen 1: Home */
+        .screen-home { background: #f5f5f5; }
+        .screen-home .header { 
+            background: #1a1a2e; 
+            padding: 30px 20px 20px; 
+            text-align: center; 
+        }
+        .screen-home .logo-text { 
+            color: #fff; 
+            font-size: 18px; 
+            font-weight: bold; 
+            margin-bottom: 5px;
+        }
+        .screen-home .tagline { 
+            color: #feca57; 
+            font-size: 12px; 
+        }
+        .screen-home .lang-bar {
+            background: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .screen-home .lang-btn {
+            padding: 4px 12px;
+            background: #eee;
+            border-radius: 12px;
+            font-size: 10px;
+        }
+        .screen-home .content {
+            padding: 20px;
+        }
+        .screen-home .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .screen-home .about-text {
+            font-size: 10px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .screen-home .cta-btn {
+            background: #feca57;
+            color: #1a1a2e;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        /* Tab bar */
+        .tab-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 8px;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #eee;
+        }
+        .tab-item { text-align: center; }
+        .tab-icon { font-size: 16px; }
+        .tab-text { font-size: 8px; color: #999; }
+        
+        /* Screen 2: Services */
+        .screen-services { background: #f5f5f5; }
+        .screen-services .header { 
+            background: #1a1a2e; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        .screen-services .header-title { 
+            color: #fff; 
+            font-size: 14px; 
+            font-weight: bold; 
+        }
+        .screen-services .content { padding: 15px; }
+        .screen-services .category { 
+            font-size: 12px; 
+            font-weight: bold; 
+            color: #1a1a2e; 
+            margin-bottom: 10px;
+        }
+        .screen-services .service-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .screen-services .service-icon { font-size: 24px; margin-right: 12px; }
+        .screen-services .service-name { font-size: 11px; color: #333; }
+        .screen-services .service-price { font-size: 11px; color: #feca57; }
+        
+        /* Screen 3: Booking */
+        .screen-booking { background: #f5f5f5; }
+        .screen-booking .header { 
+            background: #1a1a2e; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        .screen-booking .header-title { 
+            color: #fff; 
+            font-size: 14px; 
+            font-weight: bold; 
+        }
+        .screen-booking .content { padding: 15px; }
+        .screen-booking .label { 
+            font-size: 10px; 
+            font-weight: bold; 
+            color: #333; 
+            margin-bottom: 5px;
+        }
+        .screen-booking .type-selector {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .screen-booking .type-btn {
+            flex: 1;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            font-size: 10px;
+        }
+        .screen-booking .type-btn.active {
+            border-color: #feca57;
+            background: #fff9e6;
+        }
+        .screen-booking .input {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+        .screen-booking .submit-btn {
+            background: #feca57;
+            color: #1a1a2e;
+            padding: 12px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        /* Screen 4: Contact */
+        .screen-contact { background: #f5f5f5; }
+        .screen-contact .header { 
+            background: #1a1a2e; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        .screen-contact .header-title { 
+            color: #fff; 
+            font-size: 14px; 
+            font-weight: bold; 
+        }
+        .screen-contact .content { padding: 15px; }
+        .screen-contact .contact-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .screen-contact .contact-icon { font-size: 20px; margin-right: 12px; }
+        .screen-contact .contact-text { font-size: 11px; color: #333; }
+        
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .instructions h4 { color: #856404; margin-bottom: 10px; }
+        .instructions p { color: #856404; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Glow Swiss - App Store 截图模板</h1>
+        
+        <div class="instructions">
+            <h4>📋 截图要求</h4>
+            <p>
+                6.7" 设备: 1290 x 2796 像素<br>
+                6.5" 设备: 1242 x 2688 像素<br>
+                5.5" 设备: 1242 x 2208 像素<br><br>
+                <strong>语言建议:</strong> 每种语言准备一套截图 (中文/德语/英语)
+            </p>
+        </div>
+        
+        <div class="info">
+            <h3>需要截取的页面</h3>
+            <ul>
+                <li><strong>首页</strong> - Logo + 关于我们 + 浏览服务按钮</li>
+                <li><strong>服务页</strong> - 洗衣服务 + 精改服务价格</li>
+                <li><strong>预约页</strong> - 服务类型选择 + 表单</li>
+                <li><strong>联系页</strong> - 电话 + 邮箱 + 地址 + 营业时间</li>
+            </ul>
+        </div>
+        
+        <h2 style="margin-bottom: 20px;">📱 预览 (6.7" 比例)</h2>
+        
+        <div class="screenshot-row">
+            <div class="screenshot">
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content screen-home">
+                            <div class="header">
+                                <div class="logo-text">Glow Swiss</div>
+                                <div class="tagline">瑞士品质，精细干洗</div>
+                            </div>
+                            <div class="lang-bar">
+                                <span class="lang-btn">中文</span>
+                                <span class="lang-btn">DE</span>
+                                <span class="lang-btn">EN</span>
+                            </div>
+                            <div class="content">
+                                <div class="section-title">关于我们</div>
+                                <div class="about-text">欢迎来到Glow Swiss，一家位于苏黎世繁华中心的精品干洗服务提供商...</div>
+                                <div class="cta-btn">浏览服务 →</div>
+                            </div>
+                            <div class="tab-bar">
+                                <div class="tab-item"><div class="tab-icon">🏠</div><div class="tab-text">首页</div></div>
+                                <div class="tab-item"><div class="tab-icon">👔</div><div class="tab-text">服务</div></div>
+                                <div class="tab-item"><div class="tab-icon">📅</div><div class="tab-text">预约</div></div>
+                                <div class="tab-item"><div class="tab-icon">📞</div><div class="tab-text">联系</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="screenshot">
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content screen-services">
+                            <div class="header">
+                                <div class="header-title">服务项目</div>
+                            </div>
+                            <div class="content">
+                                <div class="category">洗衣服务</div>
+                                <div class="service-item">
+                                    <span class="service-icon">👕</span>
+                                    <div><div class="service-name">衬衫</div><div class="service-price">CHF 5</div></div>
+                                </div>
+                                <div class="service-item">
+                                    <span class="service-icon">🧥</span>
+                                    <div><div class="service-name">外套</div><div class="service-price">CHF 22</div></div>
+                                </div>
+                                <div class="service-item">
+                                    <span class="service-icon">👔</span>
+                                    <div><div class="service-name">西装</div><div class="service-price">CHF 16</div></div>
+                                </div>
+                                <div class="category" style="margin-top: 15px;">精改服务</div>
+                                <div class="service-item">
+                                    <span class="service-icon">✂️</span>
+                                    <div><div class="service-name">修改服务</div><div class="service-price">CHF 35起</div></div>
+                                </div>
+                            </div>
+                            <div class="tab-bar">
+                                <div class="tab-item"><div class="tab-icon">🏠</div><div class="tab-text">首页</div></div>
+                                <div class="tab-item"><div class="tab-icon">👔</div><div class="tab-text">服务</div></div>
+                                <div class="tab-item"><div class="tab-icon">📅</div><div class="tab-text">预约</div></div>
+                                <div class="tab-item"><div class="tab-icon">📞</div><div class="tab-text">联系</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="screenshot">
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content screen-booking">
+                            <div class="header">
+                                <div class="header-title">预约服务</div>
+                            </div>
+                            <div class="content">
+                                <div class="label">服务类型</div>
+                                <div class="type-selector">
+                                    <div class="type-btn active">👔 洗衣服务</div>
+                                    <div class="type-btn">✂️ 修改服务</div>
+                                </div>
+                                <div class="label">姓名</div>
+                                <div class="input">请输入姓名</div>
+                                <div class="label">电话</div>
+                                <div class="input">请输入电话</div>
+                                <div class="label">备注</div>
+                                <div class="input" style="height: 50px;"></div>
+                                <div class="submit-btn">提交预约</div>
+                            </div>
+                            <div class="tab-bar">
+                                <div class="tab-item"><div class="tab-icon">🏠</div><div class="tab-text">首页</div></div>
+                                <div class="tab-item"><div class="tab-icon">👔</div><div class="tab-text">服务</div></div>
+                                <div class="tab-item"><div class="tab-icon">📅</div><div class="tab-text">预约</div></div>
+                                <div class="tab-item"><div class="tab-icon">📞</div><div class="tab-text">联系</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="screenshot">
+                <div class="phone-frame">
+                    <div class="screen">
+                        <div class="screen-content screen-contact">
+                            <div class="header">
+                                <div class="header-title">联系我们</div>
+                            </div>
+                            <div class="content">
+                                <div class="contact-item">
+                                    <span class="contact-icon">📞</span>
+                                    <div class="contact-text">+41 76 465 16 12</div>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-icon">✉️</span>
+                                    <div class="contact-text">info@glowswiss.ch</div>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-icon">📍</span>
+                                    <div class="contact-text">Seestrasse 410<br>8038 Zürich</div>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-icon">🕐</span>
+                                    <div class="contact-text">Mo-Fr: 09:00-12:00<br>13:30-19:00</div>
+                                </div>
+                            </div>
+                            <div class="tab-bar">
+                                <div class="tab-item"><div class="tab-icon">🏠</div><div class="tab-text">首页</div></div>
+                                <div class="tab-item"><div class="tab-icon">👔</div><div class="tab-text">服务</div></div>
+                                <div class="tab-item"><div class="tab-icon">📅</div><div class="tab-text">预约</div></div>
+                                <div class="tab-item"><div class="tab-icon">📞</div><div class="tab-text">联系</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>📝 截屏步骤</h3>
+            <ol style="margin-left: 20px; color: #666;">
+                <li>在模拟器中打开 App</li>
+                <li>按 Cmd+Shift+4 截屏</li>
+                <li>或使用 Xcode: Device → Save Screenshot</li>
+                <li>截取 4 个页面 (首页/服务/预约/联系)</li>
+                <li>可以用 Preview/Sketch/Canva 调整尺寸</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
