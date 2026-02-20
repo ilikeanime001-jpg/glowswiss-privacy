@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Glow Swiss</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 { color: #1a1a2e; border-bottom: 2px solid #feca57; padding-bottom: 10px; }
+        h2 { color: #1a1a2e; margin-top: 30px; }
+        .lang-switch { 
+            text-align: right; 
+            margin-bottom: 20px;
+        }
+        .lang-switch a { 
+            color: #0066cc; 
+            text-decoration: none; 
+            margin: 0 10px;
+        }
+        .lang-switch a:hover { text-decoration: underline; }
+        .content { display: none; }
+        .content.active { display: block; }
+        footer { 
+            margin-top: 50px; 
+            padding-top: 20px; 
+            border-top: 1px solid #eee; 
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <a href="#" onclick="showLang('en')">English</a> |
+        <a href="#" onclick="showLang('zh')">中文</a>
+    </div>
+    
+    <div id="en" class="content active">
+        <h1>Privacy Policy</h1>
+        <p><em>Last updated: February 20, 2026</em></p>
+        
+        <h2>1. Introduction</h2>
+        <p>Welcome to Glow Swiss ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.</p>
+        
+        <h2>2. Data Collection</h2>
+        <p><strong>We do not collect any personal data.</strong></p>
+        <p>Our app is designed to provide dry cleaning service information and appointment booking functionality. We do not collect, store, or share any personal information from our users.</p>
+        
+        <h2>3. Appointment Booking</h2>
+        <p>When you use the appointment booking feature:</p>
+        <ul>
+            <li>You voluntarily provide your name and phone number</li>
+            <li>This information is used solely for the purpose of the current appointment communication</li>
+            <li>We do not store or retain this information after the appointment is completed</li>
+        </ul>
+        
+        <h2>4. Third-Party Services</h2>
+        <p>Our app does not contain any third-party analytics tools or trackers. We do not share any data with external parties.</p>
+        
+        <h2>5. Children's Privacy</h2>
+        <p>Our service is not intended for children under 13 years of age. We do not knowingly collect information from children.</p>
+        
+        <h2>6. Changes to This Policy</h2>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+        
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+        <ul>
+            <li><strong>Email</strong>: info@glowswiss.ch</li>
+            <li><strong>Address</strong>: Seestrasse 410, 8038 Zürich, Switzerland</li>
+        </ul>
+    </div>
+    
+    <div id="zh" class="content">
+        <h1>隐私政策</h1>
+        <p><em>最后更新：2026年2月20日</em></p>
+        
+        <h2>1. 简介</h2>
+        <p>欢迎使用 Glow Swiss（"我们"）。我们致力于保护您的隐私。本隐私政策说明我们在您使用我们的移动应用程序时如何收集、使用、披露和保障您的信息。</p>
+        
+        <h2>2. 数据收集</h2>
+        <p><strong>我们不收集任何个人数据。</strong></p>
+        <p>我们的应用程序旨在提供干洗服务信息和预约功能。我们不会从用户收集、存储或分享任何个人信息。</p>
+        
+        <h2>3. 预约功能</h2>
+        <p>当您使用预约功能时：</p>
+        <ul>
+            <li>您自愿提供您的姓名和电话号码</li>
+            <li>这些信息仅用于本次预约沟通</li>
+            <li>预约完成后我们不会存储或保留这些信息</li>
+        </ul>
+        
+        <h2>4. 第三方服务</h2>
+        <p>我们的应用程序不包含任何第三方分析工具或追踪器。我们不会与外部方分享任何数据。</p>
+        
+        <h2>5. 儿童隐私</h2>
+        <p>我们的服务不面向13岁以下的儿童。我们不会故意收集儿童的信息。</p>
+        
+        <h2>6. 政策变更</h2>
+        <p>我们可能会不时更新我们的隐私政策。我们将通过在此页面发布新隐私政策来通知您任何变更。</p>
+        
+        <h2>7. 联系我们</h2>
+        <p>如果您对本隐私政策有任何问题，请联系我们：</p>
+        <ul>
+            <li><strong>邮箱</strong>: info@glowswiss.ch</li>
+            <li><strong>地址</strong>: Seestrasse 410, 8038 Zürich, Switzerland</li>
+        </ul>
+    </div>
+    
+    <footer>
+        <p>© 2026 Glow Swiss. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function showLang(lang) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
+        }
+    </script>
+</body>
+</html>
